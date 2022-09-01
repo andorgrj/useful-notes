@@ -245,4 +245,8 @@ Test that the configuration was successful by trying to access the website on th
         docker commit web web-image
         docker run -dt --name web01 -p 80:80 web-image
         curl localhost
+        history
+
+---------------------------------------------------------------
+        
         
