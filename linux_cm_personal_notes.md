@@ -357,6 +357,33 @@ history
 -------------------------------------------
 Managing RPM
 
+First, let's become root:
+
+sudo -i
+Install the telnet package:
+
+yum install -y telnet
+Verify the integrity of the RPM database:
+
+cd /var/lib/rpm/
+/usr/lib/rpm/rpmdb_verify Packages
+Move Packages to Packages.bad and create a new RPM database from Packages.bad:
+
+mv Packages Packages.bad
+/usr/lib/rpm/rpmdb_dump Packages.bad | /usr/lib/rpm/rpmdb_load Packages
+Verify the integrity of the new RPM database:
+
+/usr/lib/rpm/rpmdb_verify Packages
+Query installed packages for errors:
+
+rpm -qa > /dev/null
+Rebuild the RPM database:
+
+rpm -vv --rebuilddb
+Install telnet:
+
+yum install -y telnet
+
 cd /var/lib/rpm
 /usr/lib/rpm/rpmdb_verify Packages
 mv Packages Packages.bad
@@ -373,4 +400,5 @@ vim /etc/yum.conf -> comment out exclude:httpd in the conf file
 yum install -y httpd
 
 -------------------------------------------
+
 
