@@ -248,5 +248,3 @@ Test that the configuration was successful by trying to access the website on th
         history
 
 ---------------------------------------------------------------
-        
-        
