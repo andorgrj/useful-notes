@@ -98,3 +98,4 @@ Since the cat command is not listed in the command alias group for WEB, gfreeman
         And then run it:
 
         [dev@server2]$ ./deploy.sh
+        
